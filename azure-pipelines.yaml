@@ -1,0 +1,9 @@
+schedules:
+- cron: "0 0 * * *"
+  displayName: "After-hours"
+- cron: "0 12 * * 0"
+  displayName: Weekend
+
+steps:
+  bash: |
+    echo "hello world"
