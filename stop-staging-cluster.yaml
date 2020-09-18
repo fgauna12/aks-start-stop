@@ -1,14 +1,14 @@
 pr: none 
 trigger: none
 schedules:
-- cron: "0 0 * * *"
-  displayName: "After-hours"
+- cron: "0 23 * * 1-5"
+  displayName: "After-hours (11 pm UTC)"
   always: true
   branches:
     include:
     - master
-- cron: "0 12 * * 0"
-  displayName: Weekend
+- cron: "0 11 * * 1-5"
+  displayName: "Mornings (11 am UTC)"
   always: true
   branches:
     include:
