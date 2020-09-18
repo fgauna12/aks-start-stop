@@ -1,0 +1,28 @@
+pr: none 
+trigger: none
+schedules:
+- cron: "0 0 * * *"
+  displayName: "After-hours"
+  always: true
+  branches:
+    include:
+    - master
+- cron: "0 12 * * 0"
+  displayName: Weekend
+  always: true
+  branches:
+    include:
+    - master
+
+variables:
+  ClusterName: azaks-realworld-staging-001
+  ResourceGroup: rg-realworld-staging-001
+
+steps:
+  - task: AzureCLI@2
+    inputs:
+      azureSubscription: 'Microsoft Azure Sponsorship(d09f4363-eae7-4c79-864e-08154540c083)'
+      scriptType: 'bash'
+      scriptLocation: 'scriptPath'
+      scriptPath: './aks-start.sh'
+      arguments: '"$(ClusterName)" "$(ResourceGroup)"'
