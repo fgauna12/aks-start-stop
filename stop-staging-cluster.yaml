@@ -7,12 +7,6 @@ schedules:
   branches:
     include:
     - master
-- cron: "0 11 * * 1-5"
-  displayName: "Mornings (11 am UTC)"
-  always: true
-  branches:
-    include:
-    - master
 
 variables:
   ClusterName: azaks-realworld-staging-001
