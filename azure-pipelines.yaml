@@ -1,8 +1,12 @@
+pr: none 
+trigger: none
 schedules:
 - cron: "0 0 * * *"
   displayName: "After-hours"
+  always: true
 - cron: "0 12 * * 0"
   displayName: Weekend
+  always: true
 
 variables:
   ClusterName: azaks-realworld-staging-001
